@@ -3,7 +3,7 @@
 AutoScrum is a python script for automating the Scrum project planning process
 using language models.
 
-[Download Research Paper](https://github.com/autoscrum/autoscrum/raw/main/paper.pdf)
+[Download Research Paper](https://github.com/autoscrum/autoscrum/raw/main/Martin-Schroder-AutoScrum-Paper.pdf)
 
 You provide it with your product name, current customer situation and desired
 customer situation and the script does the rest.
@@ -12,6 +12,14 @@ customer situation and the script does the rest.
 
 AutoScrum is designed to assist users with the automatic generation of detailed
 scrum plans using language models.
+
+![detail](images/detail.png "AutoScrum details")
+
+AutoScrum also supports shortcut mode where a single language program is used to generate the next
+most urgent task to bridge the gap between current and desired situation. The shortcut mode does not
+create any user stories or features. Instead it simply iteratively creates a plan.
+
+![shortcut](images/shortcut.png "AutoScrum shortcut mode")
 
 By using AutoScrum, you can generate stories, features, goals, requirements,
 tasks, acceptance criteria, and clarifications for your scrum planning. 
