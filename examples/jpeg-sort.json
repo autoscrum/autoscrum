@@ -1,0 +1,50 @@
+{
+    "product": "JPEG sorting script",
+    "vision": "Easy command that can rename jpeg files in a directory to filenames that correspond date and time when photo was taken based on jpeg metadata",
+    "niche": "Linux users",
+    "current_state": {
+        "photos with timestamp filenames": 1000,
+        "files_in_directory": "all photos have filenames that correspond to their jpeg timestamps and sorted by photo date"
+    },
+    "desired_state": {
+        "photos with timestamp filenames": 1000,
+        "files_in_directory": "all photos have filenames that correspond to their jpeg timestamps and sorted by photo date"
+    },
+    "plan": [
+        {
+            "reasoning": "As the current situation is disorganized with random names attached to each image, we need to rename the files with their corresponding jpeg timestamp. Installing ExifTool to extract the timestamp would be the best way to perform this task. We would then need to sort the files according to their photo taken date. We could achieve this through a script and tagging each photo properly.",
+            "task": "Install ExifTool and write a script to rename files based on jpeg timestamp, then sort files by their photo taken date.",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Since you already have a script to rename the photos and sort them by date taken, the next task should be to run the script on all the files in the designated directory.",
+            "task": "Run the script on all the files in your unsorted directory.",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Now that you have renamed and sorted your photo files, the next step is to review the sorted files and delete any duplicates or unwanted photos.",
+            "task": "Review and delete any duplicates or unwanted photos.",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Since all the photos already have timestamp filenames and are sorted by photo date, there is nothing more to do.",
+            "task": "Review your sorted photo collection and select your favorites",
+            "status": "done"
+        },
+        {
+            "reasoning": "Since you have already sorted your photo collection and selected your favorites, the next best task would be to back up your photos to a secure cloud or external storage device.",
+            "task": "Back up your sorted photo collection to a secure cloud or external storage device.",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Since you have already sorted your photos by their timestamps and photo taken date, and you have backed up all your photos for security, the next task you should do is to edit your favorite photos to enhance image quality or retouch if necessary.",
+            "task": "Edit your favorite photos to enhance image quality or retouch if necessary.",
+            "status": "progress"
+        }
+    ],
+    "requirements": [],
+    "sprint_duration": "",
+    "features": [],
+    "stories": [],
+    "avoid": []
+}

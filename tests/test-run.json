@@ -1,0 +1,21 @@
+{
+    "product": "Happy Farm",
+    "vision": "A farm full of chickens",
+    "niche": "Farmers",
+    "current_state": {
+        "chicken_count": 200
+    },
+    "desired_state": {
+        "chicken_count": 200
+    },
+    "plan": [
+    ],
+    "requirements": [
+    ],
+    "sprint_duration": "2 weeks",
+    "features": [
+    ],
+    "stories": [
+    ],
+    "avoid": []
+}

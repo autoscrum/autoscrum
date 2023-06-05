@@ -1,0 +1,30 @@
+---
+image:
+  name: swedishembedded/build:v0.24.6
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+
+stages:
+  - build
+
+# This job runs all code checks, unit and integration tests
+main:
+  stage: build
+  artifacts:
+    paths:
+      - coverage.xml
+      - htmlcov/*
+    expire_in: 1 week
+    when: always
+  rules:
+    - if: $CI_PIPELINE_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  before_script:
+    - pip3 install build virtualenv
+    - pip3 install -r requirements.txt
+  script:
+    - python -m build
+    - coverage run -m pytest
+    - coverage xml
+    - coverage report

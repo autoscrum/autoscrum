@@ -1,0 +1,53 @@
+{
+    "product": "Happy Farm",
+    "vision": "A farm full of chickens",
+    "niche": "Farmers",
+    "current_state": {
+        "chicken_count": 200
+    },
+    "desired_state": {
+        "chicken_count": 200
+    },
+    "plan": [
+        {
+            "reasoning": "In order to increase your chicken count quickly, it is best to purchase more chickens. Research nearby hatcheries and farm animal stores to find where you can purchase chicks.",
+            "task": "Buy 190 more chickens",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Since you only need 10 more chickens to reach your desired state and you have already purchased 190, the best thing to do is to buy the remaining 10 chickens and add them to your livestock.",
+            "task": "Buy 10 more chickens",
+            "status": "progress"
+        },
+        {
+            "reasoning": "As you have already bought all 200 chickens needed to reach the desired situation, your focus should be now on taking care of them.",
+            "task": "Build a coop for the chickens",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Now that your chicken count is at 200, it is important to take care of them so that you can reap the benefits of having a healthy flock. Cleaning the coop regularly is a crucial aspect of this.",
+            "task": "Clean the chicken coop",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Now that you have the chickens and their coop is built and clean, the next task should be to form a feeding plan. Proper nutrition determines egg production, chicken growth and overall health. ",
+            "task": "Create a feeding plan for your chickens",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Since you have already achieved your desired state of having 200 chickens, there is not much left to do. However, in order to maintain good health and egg production of your chickens, it is important to keep track of their health on a regular basis.",
+            "task": "Schedule a routine checkup with a veterinarian for your chickens",
+            "status": "progress"
+        },
+        {
+            "reasoning": "Since you have completed all the necessary steps for taking care of your chickens and also achieved your desired state of 200 chickens, I believe the best next task for you would be to monitor their growth, health, and productivity regularly.",
+            "task": "Monitor chicken growth, health, and productivity regularly.",
+            "status": "done"
+        }
+    ],
+    "requirements": [],
+    "sprint_duration": "2 weeks",
+    "features": [],
+    "stories": [],
+    "avoid": []
+}

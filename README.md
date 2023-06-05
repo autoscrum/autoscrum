@@ -1,92 +1,108 @@
 # AutoScrum
 
+AutoScrum is a python script for automating the Scrum project planning process
+using language models.
 
+[Download Research Paper](https://github.com/autoscrum/autoscrum/raw/main/paper.pdf)
 
-## Getting started
+You provide it with your product name, current customer situation and desired
+customer situation and the script does the rest.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+![overview](images/overview.png "What is autoscrum?")
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+AutoScrum is designed to assist users with the automatic generation of detailed
+scrum plans using language models.
 
-## Add your files
+By using AutoScrum, you can generate stories, features, goals, requirements,
+tasks, acceptance criteria, and clarifications for your scrum planning. 
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## Installing
 
+You can install dependencies using pip:
+
+    pip3 install autoscrum
+
+## How to Use
+
+First create a json file that contains your initial parameters. See tests/test-run.json for an
+example.
+
+```json
+{
+    "product": "Your product name",
+    "vision": "Your product vision",
+    "niche": "Your target customer niche",
+    "current_state": {
+        "some_state": 10
+        "some_other_state": 5
+    },
+    "desired_state": {
+        "some_state": 20
+        "some_other_state": 50
+    },
+    "plan": [
+    ],
+    "requirements": [
+    ],
+    "sprint_duration": "2 weeks",
+    "features": [
+    ],
+    "stories": [
+    ],
+    "avoid": []
+}
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/swedishembedded/platform/autoscrum.git
-git branch -M main
-git push -uf origin main
-```
 
-## Integrate with your tools
+AutoScrum will fill this file with results.
 
-- [ ] [Set up project integrations](https://gitlab.com/swedishembedded/platform/autoscrum/-/settings/integrations)
+To use the AutoScrum script, follow these steps:
 
-## Collaborate with your team
+1. Pass the JSON data file for your scrum plan as an argument using the `-f` or `--data-file` option when you run the script. 
+   
+    Example:
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+    ```sh
+    autoscrum -f my_scrum_data.json <command> <params>
+    ```
 
-## Test and Deploy
+2. Select the command you want to execute. The available commands are: `stories`, `features`, `goals`, `clarify`, `acceptance`, `tasks`, `requirements`, `plan`.
 
-Use the built-in continuous integration in GitLab.
+    Example:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+    ```sh
+	autoscrum -f my_scrum_data.json stories
+    ```
 
-***
+3. Use `-n` or `--count` option to define the number of items you want to generate for the selected command. The default count is 3 for most commands, and 1 for the `plan` command.
 
-# Editing this README
+    Example:
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+    ```sh
+    autoscrum -f my_scrum_data.json stories -n 5
+    ```
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## Commands
 
-## Name
-Choose a self-explaining name for your project.
+Here are the available commands:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- `stories`: Generate user stories.
+- `features`: Generate features.
+- `goals`: Generate sprint goals.
+- `clarify`: Generate clarification questions for your stories.
+- `acceptance`: Generate acceptance criteria for your stories.
+- `tasks`: Generate tasks for your stories.
+- `requirements`: Generate project requirements.
+- `plan`: Generate a shortcut plan.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Output
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+The script prints the existing items (if any) of the selected type (stories,
+features, goals, etc.) before it generates and prints the new items. The new
+items are automatically added to your JSON data file.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Note
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+This script is meant to assist with scrum planning, but the generated content
+should be reviewed and approved by your scrum team before use. Always consider
+your specific project needs when planning a sprint.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.

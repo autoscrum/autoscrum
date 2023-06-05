@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autoscrum"
+version = "0.2.0"
+description = "AutoScrum"
+readme = "README.md"
+authors = [{ name = "Martin Schröder", email = "info@swedishembedded.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+	"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+]
+keywords = []
+dependencies = [
+	"guidance",
+	"pathlib",
+	"datetime",
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = [
+	"black",
+	"build",
+	"bumpversion",
+	"isort",
+	"pip-tools",
+	"pytest"
+]
+
+[project.urls]
+Homepage = "https://github.com/autoscrum/autoscrum"
+
+[project.scripts]
+autoscrum = "autoscrum.__main__:main"
+
+[tool.bumpver]
+current_version = "0.2.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+	'current_version = "{version}"',
+	'version = "{version}"',
+]
+"autoscrum/__init__.py" = [
+	'__version__ = "{version}"',
+]

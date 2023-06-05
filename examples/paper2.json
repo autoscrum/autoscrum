@@ -1,0 +1,285 @@
+{
+    "product": "AutoScrum Research Paper",
+    "vision": "A groundbreaking research paper that demonstrates automation of the scrum process in project planning from product vision to sprint review using large language models",
+    "requirements": [
+        "should describe in detail how to automate each step of the scrum process",
+        "user should be able to brainstorm product features",
+        "product goals should be automatically defined from product features and requirements",
+        "product owner should be able to generate user stories from product features",
+        "it should be possible to break down user stories into tasks automatically",
+        "everything should be stored in both raw json and in mongodb for easy access",
+        "there needs to be a python script that demonstrates the whole process",
+        "developers need to be able to generate acceptance criteria automatically",
+        "stories need to be stored in product backlog",
+        "all source code must be written in python",
+        "the process of generating items should be combined with manual review",
+        "it should be possible to do sprint planning in the command line utility",
+        "it should be possible to go through the list of tasks and prioritize them",
+        "source code must be available on github and must have full test suite in ci"
+    ],
+    "sprint_duration": "2 weeks",
+    "features": [
+        {
+            "name": "Automated Product Backlog Generation",
+            "explanation": "Automatically generate a product backlog from the product features and requirements.",
+            "reasoning": "This feature will save time and effort for the product owner by automating the process of generating a product backlog.",
+            "goal": "Automate the process of generating a product backlog."
+        },
+        {
+            "name": "Automated Sprint Review Report Generation",
+            "explanation": "Automatically generate a sprint review report from the completed sprint tasks.",
+            "reasoning": "This feature will save time and effort for the scrum master by automating the process of generating a sprint review report.",
+            "goal": "Automate the process of generating a sprint review report."
+        },
+        {
+            "name": "Automated Sprint Planning Meeting Scheduler",
+            "explanation": "Automatically schedule a sprint planning meeting based on the availability of the team members.",
+            "reasoning": "This feature will save time and effort for the scrum master by automating the process of scheduling a sprint planning meeting.",
+            "goal": "Automate the process of scheduling a sprint planning meeting."
+        },
+        {
+            "name": "Automated User Story Generation",
+            "explanation": "Automatically generate user stories from product features",
+            "reasoning": "This feature will save time and effort for the product owner and ensure that all necessary user stories are generated",
+            "goal": "Automate the process of generating user stories from product features"
+        },
+        {
+            "name": "Automated Acceptance Criteria Generation",
+            "explanation": "Automatically generate acceptance criteria for user stories",
+            "reasoning": "This feature will save time and effort for the developers and ensure that all necessary acceptance criteria are generated",
+            "goal": "Automate the process of generating acceptance criteria for user stories"
+        },
+        {
+            "name": "Automated Task Breakdown",
+            "explanation": "Automatically break down user stories into tasks",
+            "reasoning": "This feature will save time and effort for the developers and ensure that all necessary tasks are generated",
+            "goal": "Automate the process of breaking down user stories into tasks"
+        }
+    ],
+    "stories": [
+        {
+            "name": "As a product owner, I want to be able to input product features and have the system automatically generate a prioritized product backlog",
+            "feature": "Automated Product Backlog Generation",
+            "reasoning": "This story addresses the goal of automating the process of generating a product backlog.",
+            "acceptance": [
+                "The system should be able to take input from the product owner regarding product features",
+                "The system should automatically generate a prioritized product backlog based on the input provided by the product owner",
+                "The system should allow the product owner to review and manually adjust the generated product backlog"
+            ],
+            "tasks": [
+                {
+                    "task": "Design the input interface for product features",
+                    "subtasks": [
+                        "Identify the necessary fields for product features",
+                        "Create a user-friendly interface for inputting product features"
+                    ]
+                },
+                {
+                    "task": "Develop the algorithm for generating a prioritized product backlog",
+                    "subtasks": [
+                        "Determine the criteria for prioritizing product features",
+                        "Write the code for sorting the product features based on the prioritization criteria"
+                    ]
+                },
+                {
+                    "task": "Implement the product backlog review and adjustment functionality",
+                    "subtasks": [
+                        "Create a user interface for reviewing and adjusting the generated product backlog",
+                        "Write the code for updating the product backlog based on the adjustments made by the product owner"
+                    ]
+                },
+                {
+                    "task": "Test the automated product backlog generation functionality",
+                    "subtasks": [
+                        "Create test cases for the input interface",
+                        "Create test cases for the prioritization algorithm",
+                        "Create test cases for the review and adjustment functionality",
+                        "Execute the test cases and fix any issues that arise"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "As a scrum master, I want to be able to generate a sprint review report with just a few clicks, so that I can save time and focus on other important tasks",
+            "feature": "Automated Sprint Review Report Generation",
+            "reasoning": "This story addresses the goal of automating the process of generating a sprint review report.",
+            "acceptance": [
+                "The sprint review report should be generated automatically with just a few clicks",
+                "The report should include a summary of completed user stories, including their acceptance criteria and any relevant metrics",
+                "The report should also include a list of unfinished user stories and their current status, as well as any impediments that were encountered during the sprint"
+            ],
+            "tasks": [
+                {
+                    "task": "Design the sprint review report template",
+                    "subtasks": [
+                        "Identify the key information to be included in the report",
+                        "Determine the layout and format of the report"
+                    ]
+                },
+                {
+                    "task": "Develop the automated report generation feature",
+                    "subtasks": [
+                        "Create a script to extract data from the sprint backlog and completed user stories",
+                        "Write code to generate the report using the template",
+                        "Test the feature to ensure accuracy and completeness of the report"
+                    ]
+                },
+                {
+                    "task": "Integrate the report generation feature into the scrum board",
+                    "subtasks": [
+                        "Add a button or link to the scrum board interface to initiate the report generation process",
+                        "Ensure that the feature is accessible to authorized users only"
+                    ]
+                },
+                {
+                    "task": "Document the feature",
+                    "subtasks": [
+                        "Create user documentation explaining how to use the feature",
+                        "Update the product documentation to include the new feature"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "As a development team member, I want to be able to schedule a sprint planning meeting with ease, so that I can focus on preparing for the meeting",
+            "feature": "Automated Sprint Planning Meeting Scheduler",
+            "reasoning": "This story addresses the goal of automating the process of scheduling a sprint planning meeting.",
+            "acceptance": [
+                "The sprint planning meeting should be scheduled automatically based on the availability of all team members",
+                "The scheduling process should take into account the time zones of all team members",
+                "The meeting should be scheduled at least 2 days in advance to allow team members to prepare"
+            ],
+            "tasks": [
+                {
+                    "task": "Create a function to check the availability of all team members",
+                    "subtasks": [
+                        "Identify the list of team members",
+                        "Retrieve the availability of each team member",
+                        "Check if all team members are available at the same time"
+                    ]
+                },
+                {
+                    "task": "Create a function to schedule the meeting",
+                    "subtasks": [
+                        "Identify the time zone of each team member",
+                        "Calculate the best time for the meeting based on the availability of all team members",
+                        "Schedule the meeting at least 2 days in advance"
+                    ]
+                },
+                {
+                    "task": "Create a notification system for the scheduled meeting",
+                    "subtasks": [
+                        "Notify all team members of the scheduled meeting",
+                        "Include the date, time, and time zone of the meeting in the notification",
+                        "Include a reminder notification 1 day before the meeting"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "As a product owner, I want to be able to customize the automated product backlog generation process by adding or removing features, so that I can tailor the backlog to my specific needs",
+            "feature": "Automated Product Backlog Generation",
+            "reasoning": "This user story allows the product owner to have more control over the generated product backlog, which can improve the overall planning process.",
+            "acceptance": [
+                "The product owner should be able to add or remove features from the automated product backlog generation process",
+                "The automated product backlog generation process should be able to generate product goals from the product features and requirements",
+                "The automated product backlog generation process should be able to generate user stories from the product features, and break them down into tasks automatically"
+            ],
+            "tasks": [
+                {
+                    "task": "Create a user interface for customizing the automated product backlog generation process",
+                    "subtasks": [
+                        "Design the user interface for adding or removing features",
+                        "Implement the user interface using a suitable framework",
+                        "Integrate the user interface with the automated product backlog generation process"
+                    ]
+                },
+                {
+                    "task": "Modify the automated product backlog generation process to allow for customization",
+                    "subtasks": [
+                        "Identify the appropriate points in the code where customization can be added",
+                        "Implement the ability to add or remove features from the backlog generation process",
+                        "Test the modified process to ensure that it still generates product goals and user stories correctly"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "As a development team member, I want to be able to view the automated acceptance criteria generation for each user story, so that I can ensure that the acceptance criteria are accurate and complete",
+            "feature": "Automated Acceptance Criteria Generation",
+            "reasoning": "This user story ensures that the development team has a clear understanding of the acceptance criteria for each user story, which can improve the quality of the product.",
+            "acceptance": [
+                "User is able to view acceptance criteria for a task by running command 'autoscrum story <story id> show acceptance'",
+                "User should be able to edit acceptance criteria using 'autoscrum story <story id> edit'"
+            ],
+            "tasks": [
+                {
+                    "task": "Implement automated acceptance criteria generation",
+                    "subtasks": [
+                        "Research and select an appropriate tool for generating acceptance criteria",
+                        "Integrate the selected tool with the project's codebase",
+                        "Define a format for storing and retrieving acceptance criteria",
+                        "Implement a script to generate acceptance criteria for each user story",
+                        "Ensure that the generated acceptance criteria are accurate and complete"
+                    ]
+                },
+                {
+                    "task": "Implement 'autoscrum story <story id> show acceptance' command",
+                    "subtasks": [
+                        "Define the command-line interface for the 'show acceptance' command",
+                        "Implement the functionality to retrieve and display the acceptance criteria for a given story",
+                        "Ensure that the displayed acceptance criteria are formatted correctly and easy to read"
+                    ]
+                },
+                {
+                    "task": "Implement 'autoscrum story <story id> edit' command",
+                    "subtasks": [
+                        "Define the command-line interface for the 'edit' command",
+                        "Implement the functionality to retrieve and edit the acceptance criteria for a given story",
+                        "Ensure that the edited acceptance criteria are saved correctly and can be retrieved later"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "As a scrum master, I want to be able to track the progress of the automated task breakdown process, so that I can ensure that the team is on track to complete the sprint",
+            "feature": "Automated Task Breakdown",
+            "reasoning": "This user story allows the scrum master to monitor the progress of the task breakdown process, which can help identify any potential issues and ensure that the sprint is completed on time.",
+            "acceptance": [
+                "The automated task breakdown process should be able to break down user stories into tasks automatically",
+                "The progress of the automated task breakdown process should be stored in both raw json and in mongodb for easy access",
+                "The command line utility should allow the scrum master to prioritize the list of tasks generated by the automated task breakdown process"
+            ],
+            "tasks": [
+                {
+                    "task": "Implement automated task breakdown process",
+                    "subtasks": [
+                        "Design algorithm to break down user stories into tasks",
+                        "Write code to implement the algorithm",
+                        "Test the automated task breakdown process to ensure it works correctly"
+                    ]
+                },
+                {
+                    "task": "Store progress of automated task breakdown process",
+                    "subtasks": [
+                        "Design schema for storing progress data in raw json format",
+                        "Write code to store progress data in raw json format",
+                        "Design schema for storing progress data in mongodb",
+                        "Write code to store progress data in mongodb",
+                        "Test storing progress data in both raw json and mongodb"
+                    ]
+                },
+                {
+                    "task": "Implement command line utility for prioritizing tasks",
+                    "subtasks": [
+                        "Design command line interface for the utility",
+                        "Write code to parse command line arguments",
+                        "Write code to prioritize the list of tasks generated by the automated task breakdown process",
+                        "Test the command line utility to ensure it works correctly"
+                    ]
+                }
+            ]
+        }
+    ],
+    "avoid": []
+}

@@ -1,0 +1,7 @@
+/.coverage
+/coverage.xml
+/.database
+/dist
+*egg-info/
+.mypy_cache
+__pycache__
