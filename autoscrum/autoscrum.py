@@ -20,7 +20,25 @@ class AutoScrum:
         self.taskalizer = self.load_program("taskalizer")
         self.requalizer = self.load_program("requalizer")
         self.planner = self.load_program("planner")
+        if not Path(path).exists():
+            self.reset()
+            self.save(path)
         self.data = self.load_data(path)
+
+    def reset(self):
+        self.data = {
+            "product": "Your product name",
+            "vision": "Your product vision",
+            "niche": "Your product niche",
+            "current_state": {},
+            "desired_state": {},
+            "plan": [],
+            "requirements": [],
+            "sprint_duration": "2 weeks",
+            "features": [],
+            "stories": [],
+            "avoid": []
+        }
 
     def load_data(self, path):
         """
@@ -67,10 +85,11 @@ class AutoScrum:
             niche=self.data["niche"],
             current_state=self.data["current_state"],
             desired_state=self.data["desired_state"],
-            requirements=self.data["requirements"],
+            requirements=[f["name"] for f in self.data["requirements"]],
             count=count
         )
         try:
+            print(prog)
             obj = json.loads(prog["response"])
             return obj
         except:

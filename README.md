@@ -35,6 +35,12 @@ You can install dependencies using pip:
 First create a json file that contains your initial parameters. See tests/test-run.json for an
 example.
 
+You can do this by running:
+
+	autoscrum -f path/file.json init
+
+The file will contain basic data:
+
 ```json
 {
     "product": "Your product name",
@@ -60,6 +66,10 @@ example.
     "avoid": []
 }
 ```
+
+You will need to set product, vision, current and desired situations. Current and desired situations
+can be JSON dictionaries with key performance indicators or any other data. They will be printed as
+JSON strings when AutoScrum generates the prompt.
 
 AutoScrum will fill this file with results.
 

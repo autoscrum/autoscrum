@@ -40,13 +40,19 @@ def main():
     subparser = subparsers.add_parser("plan")
     subparser.add_argument("-n", "--count", type=int, default=1)
 
+    subparser = subparsers.add_parser("init")
+
     args = parser.parse_args()
 
     print(f"Using datafile: {args.data_file}")
     autoscrum = AutoScrum(args.data_file)
 
 
-    if args.command == "plan":
+    if args.command == "init":
+        autoscrum.reset()
+        autoscrum.save(args.data_file)
+
+    elif args.command == "plan":
         print("Existing plan: ")
         for i,f in enumerate(autoscrum.plan):
             print(f"{i}: {f['task']}")
